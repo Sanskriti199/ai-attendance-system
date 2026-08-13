@@ -1,4 +1,7 @@
-.venv/
-__pycache__/
-*.pyc
 .env
+.vscode
+*.pyc
+__pycache__/
+.DS_Store
+.venv/
+.streamlit/
