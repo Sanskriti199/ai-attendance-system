@@ -13,3 +13,18 @@ def footer_home():
             </p>
         </div>
     """, unsafe_allow_html=True)
+
+
+def footer_dashboard():
+    st.markdown("""
+        <div style="
+            margin-top:2rem;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+        ">
+            <p style="font-weight:bold; color:black;">
+                Created by Sanskriti Mittal
+            </p>
+        </div>
+    """, unsafe_allow_html=True)
