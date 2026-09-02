@@ -7,7 +7,9 @@ def get_logo_path():
     return os.path.join(
         os.path.dirname(
             os.path.dirname(
-                os.path.dirname(os.path.abspath(__file__))
+                os.path.dirname(
+                    os.path.abspath(__file__)
+                )
             )
         ),
         "assets",
@@ -21,52 +23,32 @@ def header_home():
     with open(logo_path, "rb") as image_file:
         encoded_image = base64.b64encode(image_file.read()).decode()
 
-    st.markdown(
-        f"""
-        <div style="
-            display:flex;
-            flex-direction:column;
-            align-items:center;
-            justify-content:center;
-            margin-bottom:30px;
-            margin-top:30px;
-        ">
-            <img src="data:image/png;base64,{encoded_image}"
-                 style="height:100px;" />
+    html = f"""
+<div style="display:flex; flex-direction:column; align-items:center; justify-content:center; margin-bottom:30px; margin-top:30px;">
+    <img src="data:image/png;base64,{encoded_image}" style="height:100px;">
+    <h1 style="text-align:center; color:#E0E3FF; font-family:'Climate Crisis', sans-serif;">
+        SMART<br>CLASS
+    </h1>
+</div>
+"""
 
-            <h1 style="
-                text-align:center;
-                color:#E0E3FF;
-                font-family:'Climate Crisis', sans-serif;
-            ">
-                SMART<br/>CLASS
-            </h1>
-        </div>
-        """,
-        unsafe_allow_html=True
-    )
+    st.html(html)
 
 
 def header_dashboard():
     logo_path = get_logo_path()
 
-    col1, col2 = st.columns([1, 2], vertical_alignment="center")
+    with open(logo_path, "rb") as image_file:
+        encoded_image = base64.b64encode(image_file.read()).decode()
 
-    with col1:
-        st.image(logo_path, width=85)
+    html = f"""
+<div style="display:flex; align-items:center; justify-content:center; gap:10px;">
+    <img src="data:image/png;base64,{encoded_image}" style="height:85px;">
+    
+    <div style="text-align:left; color:#5865F2; font-family:'Climate Crisis', sans-serif; font-size:2rem; line-height:0.9; font-weight:bold;">
+        SMART<br>CLASS
+    </div>
+</div>
+"""
 
-    with col2:
-        st.markdown(
-            """
-            <div style="
-                color:#5865F2;
-                font-family:'Climate Crisis', sans-serif;
-                font-size:2rem;
-                line-height:0.9;
-                font-weight:bold;
-            ">
-                SMART<br/>CLASS
-            </div>
-            """,
-            unsafe_allow_html=True
-        )
+    st.html(html)
