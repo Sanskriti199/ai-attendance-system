@@ -1,8 +1,12 @@
 import streamlit as st
 import base64
+import os
 
 
 def inject_local_font(font_path, font_name):
+    if not os.path.exists(font_path):
+        return
+
     with open(font_path, "rb") as font_file:
         font_data = base64.b64encode(font_file.read()).decode()
 
@@ -11,7 +15,7 @@ def inject_local_font(font_path, font_name):
         <style>
         @font-face {{
             font-family: "{font_name}";
-            src: url(data:font/ttf;base64,{font_data}) format("truetype");
+            src: url("data:font/ttf;base64,{font_data}") format("truetype");
             font-weight: normal;
             font-style: normal;
         }}

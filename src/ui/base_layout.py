@@ -39,7 +39,9 @@ def style_base_layout():
 
     base_path = os.path.dirname(
         os.path.dirname(
-            os.path.dirname(os.path.abspath(__file__))
+            os.path.dirname(
+                os.path.abspath(__file__)
+            )
         )
     )
 
@@ -71,7 +73,6 @@ def style_base_layout():
         """
         <style>
 
-            /* Hide Streamlit top bar */
             #MainMenu,
             footer,
             header {
@@ -84,7 +85,7 @@ def style_base_layout():
 
             h1 {
                 font-family: 'Climate Crisis', sans-serif !important;
-                font-size: 3.5rem !important;
+                font-size: 2.5rem !important;
                 line-height: 1.1 !important;
                 margin-bottom: 0rem !important;
             }
@@ -131,7 +132,7 @@ def style_base_layout():
             }
 
             button:hover {
-                transform: scale(1.05);
+                transform: scale(1.05) !important;
             }
 
         </style>

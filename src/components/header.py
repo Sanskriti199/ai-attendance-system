@@ -5,7 +5,11 @@ import os
 
 def get_logo_path():
     return os.path.join(
-        os.path.dirname(os.path.dirname(os.path.dirname(__file__))),
+        os.path.dirname(
+            os.path.dirname(
+                os.path.dirname(os.path.abspath(__file__))
+            )
+        ),
         "assets",
         "logoo.png"
     )
@@ -19,11 +23,22 @@ def header_home():
 
     st.markdown(
         f"""
-        <div style="display:flex; flex-direction:column; align-items:center;
-                    justify-content:center; margin-bottom:30px; margin-top:30px">
+        <div style="
+            display:flex;
+            flex-direction:column;
+            align-items:center;
+            justify-content:center;
+            margin-bottom:30px;
+            margin-top:30px;
+        ">
             <img src="data:image/png;base64,{encoded_image}"
                  style="height:100px;" />
-            <h1 style="text-align:center; color:#E0E3FF">
+
+            <h1 style="
+                text-align:center;
+                color:#E0E3FF;
+                font-family:'Climate Crisis', sans-serif;
+            ">
                 SMART<br/>CLASS
             </h1>
         </div>
@@ -35,17 +50,15 @@ def header_home():
 def header_dashboard():
     logo_path = get_logo_path()
 
-    with open(logo_path, "rb") as image_file:
-        encoded_image = base64.b64encode(image_file.read()).decode()
+    col1, col2 = st.columns([1, 2], vertical_alignment="center")
 
-    st.markdown(
-        f"""
-        <div style="display:flex; align-items:center; justify-content:center; gap:10px">
-            <img src="data:image/png;base64,{encoded_image}"
-                 style="height:85px;" />
+    with col1:
+        st.image(logo_path, width=85)
 
+    with col2:
+        st.markdown(
+            """
             <div style="
-                text-align:left;
                 color:#5865F2;
                 font-family:'Climate Crisis', sans-serif;
                 font-size:2rem;
@@ -54,7 +67,6 @@ def header_dashboard():
             ">
                 SMART<br/>CLASS
             </div>
-        </div>
-        """,
-        unsafe_allow_html=True
-    )
+            """,
+            unsafe_allow_html=True
+        )
