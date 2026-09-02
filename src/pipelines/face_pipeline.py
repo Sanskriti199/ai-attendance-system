@@ -106,36 +106,26 @@ def predict_attendance(class_image_np):
     if not model_data:
         return detected_student, [], len(encodings)
 
-    clf = model_data["clf"]
-
     X_train = model_data["X"]
     Y_train = model_data["Y"]
 
     all_students = sorted(list(set(Y_train)))
 
+    resemblance_threshold = 0.5
+
     for encoding in encodings:
 
-        if len(all_students) >= 2:
-
-            predicted_id = int(
-                clf.predict([encoding])[0]
-            )
-
-        else:
-
-            predicted_id = int(all_students[0])
-
-        student_embedding = X_train[
-            Y_train.index(predicted_id)
-        ]
-
-        best_match_score = np.linalg.norm(
-            student_embedding - encoding
+        distances = np.linalg.norm(
+            np.array(X_train) - encoding,
+            axis=1
         )
 
-        resemblance_threshold = 0.6
+        best_index = np.argmin(distances)
+        best_match_score = distances[best_index]
 
         if best_match_score <= resemblance_threshold:
+
+            predicted_id = int(Y_train[best_index])
 
             detected_student[predicted_id] = True
 
