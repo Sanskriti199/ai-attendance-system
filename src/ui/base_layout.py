@@ -126,29 +126,6 @@ div[data-testid="stTextInputRootElement"] {
     color: black !important;
 }
 
-/* Selectbox / dropdown */
-.stSelectbox > div > div,
-div[data-baseweb="select"] > div {
-    background-color: #FFFFFF !important;
-    color: black !important;
-    border-radius: 0.8rem !important;
-    border: 1px solid #ccc !important;
-}
-
-.stSelectbox label,
-.stSelectbox label p {
-    color: black !important;
-}
-
-div[data-baseweb="popover"] li {
-    background-color: #FFFFFF !important;
-    color: black !important;
-}
-
-div[data-baseweb="popover"] li:hover {
-    background-color: #E0E3FF !important;
-}
-
 /* Buttons */
 button {
     border-radius: 1.5rem !important;
