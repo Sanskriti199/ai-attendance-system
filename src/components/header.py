@@ -32,7 +32,7 @@ def header_home():
 </div>
 """
 
-    st.html(html)
+    st.markdown(html, unsafe_allow_html=True)
 
 
 def header_dashboard():
@@ -51,4 +51,4 @@ def header_dashboard():
 </div>
 """
 
-    st.html(html)
+    st.markdown(html, unsafe_allow_html=True)

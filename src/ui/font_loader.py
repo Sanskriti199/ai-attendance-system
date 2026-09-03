@@ -10,7 +10,7 @@ def inject_local_font(font_path, font_name):
     with open(font_path, "rb") as font_file:
         font_data = base64.b64encode(font_file.read()).decode()
 
-    st.html(
+    st.markdown(
         f"""
 <style>
 @font-face {{
@@ -20,5 +20,6 @@ def inject_local_font(font_path, font_name):
     font-style: normal;
 }}
 </style>
-"""
+""",
+        unsafe_allow_html=True
     )
