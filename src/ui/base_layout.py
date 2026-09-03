@@ -184,16 +184,14 @@ div[aria-modal="true"] button * {
     color: white !important;
 }
 
-/* Table / DataFrame */
-[data-testid="stTable"],
-[data-testid="stDataFrame"] {
+/* Table (st.table only — st.dataframe is canvas-based, left to config.toml theme) */
+[data-testid="stTable"] {
     background-color: #FFFFFF !important;
 }
 
 [data-testid="stTable"] table,
 [data-testid="stTable"] th,
-[data-testid="stTable"] td,
-[data-testid="stDataFrame"] div {
+[data-testid="stTable"] td {
     color: black !important;
     background-color: #FFFFFF !important;
 }
