@@ -22,6 +22,16 @@
 
 ---
 
+# 🚀 Deployment
+
+The AI Attendance System is deployed using **Streamlit Cloud and Vercel**, providing a publicly accessible web interface while supporting the application's backend services.
+
+- ☁️ **Streamlit** — Deployment of the Streamlit application
+- ▲ **Vercel** — Deployment of the web frontend
+- 🗄️ **Supabase** — Cloud database and real-time data management
+
+---
+
 ## 📌 About The Project
 
 The **AI-Powered Attendance System** is a secure and intelligent attendance management platform that combines **facial recognition and voice verification** for biometric authentication.
