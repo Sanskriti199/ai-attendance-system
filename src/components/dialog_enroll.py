@@ -3,7 +3,7 @@ from src.database.db import enroll_student_to_subject
 from src.database.config import supabase
 import time
 
-@st.dialog("Enroll in Subkect")
+@st.dialog("Enroll in SubJect")
 
 def enroll_dialog():
     st.write('Enter the subject code provided by your teacher to enroll')

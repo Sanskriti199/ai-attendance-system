@@ -83,6 +83,16 @@ header {
     padding-top: 0rem !important;
 }
 
+/* Default text color for readability on light background */
+.stApp p,
+.stApp span,
+.stApp label,
+.stMarkdown,
+.stCaption,
+div[data-testid="stCaptionContainer"] {
+    color: #111 !important;
+}
+
 /* Main headings */
 h1 {
     font-family: 'Climate Crisis', sans-serif !important;
@@ -121,12 +131,79 @@ div[data-testid="stTextInputRootElement"] {
     color: #888 !important;
 }
 
-.stTextInput label,
-.stTextInput label p {
+/* Selectbox / dropdown */
+.stSelectbox > div > div,
+div[data-baseweb="select"] > div {
+    background-color: #FFFFFF !important;
+    color: black !important;
+    border-radius: 0.8rem !important;
+    border: 1px solid #ccc !important;
+}
+
+div[data-baseweb="popover"],
+ul[data-baseweb="menu"] {
+    background-color: #FFFFFF !important;
+}
+
+div[data-baseweb="popover"] li {
+    background-color: #FFFFFF !important;
     color: black !important;
 }
 
-/* Buttons */
+div[data-baseweb="popover"] li:hover {
+    background-color: #E0E3FF !important;
+}
+
+/* Dialog / modal box - broad selector for all st.dialog variants */
+div[data-testid="stDialog"],
+div[data-testid="stDialog"] > div,
+div[role="dialog"],
+div[aria-modal="true"] {
+    background-color: #FFFFFF !important;
+}
+
+div[data-testid="stDialog"] *,
+div[role="dialog"] *,
+div[aria-modal="true"] * {
+    color: black !important;
+}
+
+div[data-testid="stDialog"] button,
+div[data-testid="stDialog"] button *,
+div[role="dialog"] button,
+div[role="dialog"] button *,
+div[aria-modal="true"] button,
+div[aria-modal="true"] button * {
+    color: white !important;
+}
+
+/* Table / DataFrame */
+[data-testid="stTable"],
+[data-testid="stDataFrame"] {
+    background-color: #FFFFFF !important;
+}
+
+[data-testid="stTable"] table,
+[data-testid="stTable"] th,
+[data-testid="stTable"] td,
+[data-testid="stDataFrame"] div {
+    color: black !important;
+    background-color: #FFFFFF !important;
+}
+
+/* Audio / Camera input widgets */
+[data-testid="stAudioInput"],
+[data-testid="stCameraInput"] {
+    background-color: #FFFFFF !important;
+    border-radius: 0.8rem !important;
+}
+
+/* Buttons — keep white text regardless of the rules above */
+.stApp button,
+.stApp button * {
+    color: white !important;
+}
+
 button {
     border-radius: 1.5rem !important;
     background-color: #5865F2 !important;
