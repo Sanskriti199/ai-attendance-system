@@ -107,6 +107,25 @@ p {
     font-family: 'Outfit', sans-serif !important;
 }
 
+/* Text inputs & password fields */
+.stTextInput input,
+.stTextInput > div > div,
+div[data-testid="stTextInputRootElement"] {
+    background-color: #FFFFFF !important;
+    color: black !important;
+    border-radius: 0.8rem !important;
+    border: 1px solid #ccc !important;
+}
+
+.stTextInput input::placeholder {
+    color: #888 !important;
+}
+
+.stTextInput label,
+.stTextInput label p {
+    color: black !important;
+}
+
 /* Buttons */
 button {
     border-radius: 1.5rem !important;
