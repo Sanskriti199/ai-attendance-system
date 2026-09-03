@@ -25,10 +25,10 @@ def header_home():
 
     html = f"""
 <div style="display:flex; flex-direction:column; align-items:center; justify-content:center; margin-bottom:30px; margin-top:30px;">
-    <img src="data:image/png;base64,{encoded_image}" style="height:100px;">
-    <h1 style="text-align:center; color:#E0E3FF; font-family:'Climate Crisis', sans-serif;">
-        SMART<br>CLASS
-    </h1>
+<img src="data:image/png;base64,{encoded_image}" style="height:100px;">
+<h1 style="text-align:center; color:#E0E3FF; font-family:'Climate Crisis', sans-serif;">
+SMART<br>CLASS
+</h1>
 </div>
 """
 
@@ -43,11 +43,10 @@ def header_dashboard():
 
     html = f"""
 <div style="display:flex; align-items:center; justify-content:center; gap:10px;">
-    <img src="data:image/png;base64,{encoded_image}" style="height:85px;">
-    
-    <div style="text-align:left; color:#5865F2; font-family:'Climate Crisis', sans-serif; font-size:2rem; line-height:0.9; font-weight:bold;">
-        SMART<br>CLASS
-    </div>
+<img src="data:image/png;base64,{encoded_image}" style="height:85px;">
+<div style="text-align:left; color:#5865F2; font-family:'Climate Crisis', sans-serif; font-size:2rem; line-height:0.9; font-weight:bold;">
+SMART<br>CLASS
+</div>
 </div>
 """
 
