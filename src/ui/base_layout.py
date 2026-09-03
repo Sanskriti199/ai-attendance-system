@@ -140,12 +140,19 @@ div[data-baseweb="select"] > div {
     border: 1px solid #ccc !important;
 }
 
+.stSelectbox span,
+.stSelectbox div[data-baseweb="select"] span,
+div[data-baseweb="select"] div[title] {
+    color: black !important;
+}
+
 div[data-baseweb="popover"],
 ul[data-baseweb="menu"] {
     background-color: #FFFFFF !important;
 }
 
-div[data-baseweb="popover"] li {
+div[data-baseweb="popover"] li,
+div[data-baseweb="popover"] li span {
     background-color: #FFFFFF !important;
     color: black !important;
 }
